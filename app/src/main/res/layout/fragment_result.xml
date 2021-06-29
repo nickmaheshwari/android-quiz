@@ -22,44 +22,51 @@
         android:layout_height="1dp"
         android:background="@color/white" />
 
-    <TextView
-        android:id="@+id/correctText"
-        style="@style/text_style"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_height="517dp"
         android:layout_weight="10"
-        android:background="@color/dark_gray"
-        android:paddingTop="15dp"
-        android:paddingLeft="10dp"
-        android:textColor="@color/lime_green"
-        android:textSize="30sp"/>
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/incorrectText"
-        style="@style/text_style"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:layout_weight="10"
-        android:background="@color/dark_gray"
-        android:paddingTop="15dp"
-        android:paddingLeft="10dp"
-        android:textColor="@color/bright_red"
-        android:textSize="30sp"/>
+        <TextView
+            android:id="@+id/correctText"
+            style="@style/text_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_weight="10"
+            android:background="@color/dark_gray"
+            android:paddingLeft="10dp"
+            android:paddingTop="15dp"
+            android:textColor="@color/lime_green"
+            android:textSize="30sp" />
 
-    <TextView
-        android:id="@+id/scoreText"
-        style="@style/text_style"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:layout_weight="10"
-        android:background="@color/dark_gray"
-        android:paddingTop="15dp"
-        android:paddingLeft="10dp"
-        android:textColor="@color/white"
-        android:textSize="30sp"/>
+        <TextView
+            android:id="@+id/incorrectText"
+            style="@style/text_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_weight="10"
+            android:background="@color/dark_gray"
+            android:paddingLeft="10dp"
+            android:paddingTop="15dp"
+            android:textColor="@color/bright_red"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/scoreText"
+            style="@style/text_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_weight="10"
+            android:background="@color/dark_gray"
+            android:paddingLeft="10dp"
+            android:paddingTop="15dp"
+            android:textColor="@color/white"
+            android:textSize="30sp" />
+    </LinearLayout>
 
     <View
         android:layout_width="match_parent"
@@ -68,18 +75,20 @@
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="90dp"
+        android:layout_height="121dp"
         android:layout_weight="10">
 
         <Button
             android:id="@+id/anotherQuizButtonButton"
             style="@style/button_style"
+            android:layout_height="73dp"
             android:layout_weight="25"
             android:text="@string/anotherQuiz" />
 
         <Button
             android:id="@+id/resetButton"
             style="@style/button_style"
+            android:layout_height="74dp"
             android:layout_weight="25"
             android:text="@string/reset" />
 

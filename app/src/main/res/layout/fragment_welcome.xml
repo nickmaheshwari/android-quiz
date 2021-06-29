@@ -12,7 +12,7 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="128dp"
+        android:layout_height="102dp"
         android:layout_margin="20dp"
         android:layout_weight="20"
         android:paddingTop="15dp"
@@ -22,18 +22,17 @@
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="10"
+        android:layout_height="68dp"
         android:layout_marginLeft="20dp"
-        android:orientation="horizontal"
-        >
+        android:layout_weight="10"
+        android:orientation="horizontal">
 
         <TextView
-            android:textColor="#FFF"
-            android:textSize="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/yourName" />
+            android:text="@string/yourName"
+            android:textColor="#FFF"
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/editName"
@@ -47,19 +46,45 @@
             android:textColor="#FFF"
             android:textColorHint="#AAA"
             android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="418dp"
+        android:layout_weight="10"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:id="@+id/greekButton"
+            style="@style/button_style"
+            android:layout_height="match_parent"
+            android:layout_weight="20"
+            android:text="Greek" />
+
+        <Button
+            android:id="@+id/latinButton"
+            style="@style/button_style"
+            android:layout_height="match_parent"
+            android:layout_weight="20"
+            android:text="Latin" />
+
+        <Button
+            android:id="@+id/mixedButton"
+            style="@style/button_style"
+            android:layout_height="match_parent"
+            android:layout_weight="20"
+            android:text="Mixed" />
+
     </LinearLayout>
 
     <Button
-        android:id="@+id/startButton"
-        style="@style/button_style"
-        android:text="@string/startQuiz"
-        android:layout_weight="40"/>
-
-    <Button
         android:id="@+id/exitButton"
-        android:text="@string/exitQuiz"
+        style="@style/button_style"
+        android:layout_height="60dp"
         android:layout_weight="20"
-        style="@style/button_style"/>
+        android:text="@string/exitQuiz" />
 
 
 </LinearLayout>
