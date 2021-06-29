@@ -1,9 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">androidQuiz</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="welcome_to_classics_quiz">Welcome to Classics Quiz</string>
-    <string name="enterName">enter name</string>
+    <string name="enterName">enter your name</string>
     <string name="yourName">Your Name:</string>
     <string name="startQuiz">START</string>
     <string name="exitQuiz">EXIT</string>
@@ -17,7 +15,6 @@
     <string name="nameResultHeader">%s, your results are:</string>
     <string name="pleaseSelectAnswer">Please select an answer to continue</string>
     <string name="questionNumberText">Question: %d</string>
-
 
     <string-array name="classic_words">
         <item>Horse|Equus|Hippo</item>

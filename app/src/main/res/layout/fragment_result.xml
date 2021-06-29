@@ -1,14 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ResultFragment">
+    android:orientation="vertical"
+    android:background="@color/black"
+    android:weightSum="100">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/resultHeader"
+        style="@style/text_style"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_weight="10"
+        android:paddingTop="15dp"
+        android:textSize="25sp"/>
 
-</FrameLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/white" />
+
+    <TextView
+        android:id="@+id/correctText"
+        style="@style/text_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_weight="10"
+        android:background="@color/dark_gray"
+        android:paddingTop="15dp"
+        android:paddingLeft="10dp"
+        android:textColor="@color/lime_green"
+        android:textSize="30sp"/>
+
+    <TextView
+        android:id="@+id/incorrectText"
+        style="@style/text_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_weight="10"
+        android:background="@color/dark_gray"
+        android:paddingTop="15dp"
+        android:paddingLeft="10dp"
+        android:textColor="@color/bright_red"
+        android:textSize="30sp"/>
+
+    <TextView
+        android:id="@+id/scoreText"
+        style="@style/text_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_weight="10"
+        android:background="@color/dark_gray"
+        android:paddingTop="15dp"
+        android:paddingLeft="10dp"
+        android:textColor="@color/white"
+        android:textSize="30sp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/white" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="10">
+
+        <Button
+            android:id="@+id/anotherQuizButtonButton"
+            style="@style/button_style"
+            android:layout_weight="25"
+            android:text="@string/anotherQuiz" />
+
+        <Button
+            android:id="@+id/resetButton"
+            style="@style/button_style"
+            android:layout_weight="25"
+            android:text="@string/reset" />
+
+    </LinearLayout>
+
+</LinearLayout>

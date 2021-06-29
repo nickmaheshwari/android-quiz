@@ -1,14 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="100"
+    android:background="#000"
     tools:context=".WelcomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="545dp"
+        android:layout_margin="20dp"
+        android:layout_weight="20"
+        android:paddingTop="15dp"
+        android:text="@string/welcome_to_classics_quiz"
+        android:textColor="#FFF"
+        android:textSize="25sp" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="10"
+        android:layout_marginLeft="20dp"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:textColor="#FFF"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/yourName" />
+
+        <EditText
+            android:id="@+id/editName"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:background="#3c3c3c"
+            android:hint="@string/enterName"
+            android:paddingLeft="4dp"
+            android:paddingBottom="4dp"
+            android:text="@string/enterName"
+            android:textColor="#FFF"
+            android:textColorHint="#AAA"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/startButton"
+        style="@style/button_style"
+        android:text="@string/startQuiz"
+        android:layout_weight="40"/>
+
+    <Button
+        android:id="@+id/exitButton"
+        android:text="@string/exitQuiz"
+        android:layout_weight="20"
+        style="@style/button_style"/>
+
+
+</LinearLayout>
