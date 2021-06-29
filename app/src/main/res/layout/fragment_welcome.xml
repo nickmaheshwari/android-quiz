@@ -12,7 +12,7 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="545dp"
+        android:layout_height="128dp"
         android:layout_margin="20dp"
         android:layout_weight="20"
         android:paddingTop="15dp"
@@ -44,7 +44,6 @@
             android:hint="@string/enterName"
             android:paddingLeft="4dp"
             android:paddingBottom="4dp"
-            android:text="@string/enterName"
             android:textColor="#FFF"
             android:textColorHint="#AAA"
             android:textSize="20sp" />
