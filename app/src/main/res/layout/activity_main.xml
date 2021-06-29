@@ -10,7 +10,7 @@
     <LinearLayout
         android:id="@+id/contentLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_margin="10dp"
         android:layout_weight="90"
         android:orientation="horizontal">
@@ -23,31 +23,6 @@
             android:layout_weight="1"
             app:defaultNavHost="true"
             app:navGraph="@navigation/nav_graph" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/buttonLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_weight="10"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/startButton"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginRight="2dp"
-            android:layout_weight="1"
-            android:text="START" />
-
-        <Button
-            android:id="@+id/submitButton"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="2dp"
-            android:layout_weight="1"
-            android:text="SUBMIT" />
     </LinearLayout>
 
 </LinearLayout>

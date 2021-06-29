@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/welcomeFragment">
 
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.ebookfrenzy.androidquiz.WelcomeFragment"
+        android:label="fragment_welcome"
+        tools:layout="@layout/fragment_welcome" >
+        <action
+            android:id="@+id/action_welcomeFragment_to_playingFragment"
+            app:destination="@id/playingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.ebookfrenzy.androidquiz.ResultFragment"
+        android:label="fragment_result"
+        tools:layout="@layout/fragment_result" >
+        <action
+            android:id="@+id/action_resultFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment" />
+        <action
+            android:id="@+id/action_resultFragment_to_playingFragment"
+            app:destination="@id/playingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/playingFragment"
+        android:name="com.ebookfrenzy.androidquiz.PlayingFragment"
+        android:label="fragment_playing"
+        tools:layout="@layout/fragment_playing" >
+        <action
+            android:id="@+id/action_playingFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
 </navigation>
