@@ -11,6 +11,12 @@ public class Question {
 
     private Set<String> wrongAnswers = new HashSet<String>();
 
+    public Question(String english, String latin, String greek) {
+        this.english = english;
+        this.latin = latin;
+        this.greek = greek;
+    }
+
     public String getEnglish() {
         return english;
     }
