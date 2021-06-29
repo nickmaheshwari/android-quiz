@@ -8,6 +8,7 @@ public class QuizTracker {
     private int incorrectAnswers = 0;
     private int questionNum = 0;
     private String name;
+    private String gameType; //greek, latin, or mixed
 
     //2. provide a static instance of self
     private static QuizTracker quizTracker;
@@ -57,7 +58,21 @@ public class QuizTracker {
         this.name = name;
     }
 
+    public void setGameType(String gameType) {
+        this.gameType = gameType;
+    }
+
     public void reset(){
+        setName("");
+        setCorrectAnswers(0);
+        setIncorrectAnswers(0);
+        setQuestionNum(1);
+        setGameType("");
+    }
+
+
+
+    public void start(String name, String gameType){
         setName("");
         setCorrectAnswers(0);
         setIncorrectAnswers(0);
