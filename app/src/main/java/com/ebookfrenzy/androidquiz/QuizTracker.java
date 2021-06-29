@@ -42,6 +42,10 @@ public class QuizTracker {
         return name;
     }
 
+    public String getGameType() {
+        return gameType;
+    }
+
     public void setCorrectAnswers(int correctAnswers) {
         this.correctAnswers = correctAnswers;
     }
