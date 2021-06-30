@@ -66,16 +66,6 @@ public class QuizTracker {
         this.gameType = gameType;
     }
 
-    public void reset(){
-        setName("");
-        setCorrectAnswers(0);
-        setIncorrectAnswers(0);
-        setQuestionNum(1);
-        setGameType("");
-    }
-
-
-
     public void start(String name, String gameType){
         setName(name);
         setGameType(gameType);
@@ -84,9 +74,4 @@ public class QuizTracker {
         setQuestionNum(1);
     }
 
-    public void again(){
-        setQuestionNum(1);
-        setCorrectAnswers(0);
-        setIncorrectAnswers(0);
-    }
 }

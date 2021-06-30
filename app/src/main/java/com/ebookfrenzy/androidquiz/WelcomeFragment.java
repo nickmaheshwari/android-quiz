@@ -31,12 +31,12 @@ public class WelcomeFragment extends Fragment {
         latinButton = view.findViewById(R.id.latinButton);
         mixedButton = view.findViewById(R.id.mixedButton);
         exitButton = view.findViewById(R.id.exitButton);
-        //get value from editName
-        String name = editName.getText().toString();
 
         greekButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //get value from editName
+                String name = editName.getText().toString();
                 //assign name to Singleton, navigate to playing fragment
                 QuizTracker.getInstance().start(name, "greek");
                 Navigation.findNavController(view).navigate(R.id.action_welcomeFragment_to_playingFragment);
@@ -46,6 +46,8 @@ public class WelcomeFragment extends Fragment {
         latinButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //get value from editName
+                String name = editName.getText().toString();
                 //get value from editName, assign name to Singleton, navigate to playing fragment
                 QuizTracker.getInstance().start(name, "latin");
                 Navigation.findNavController(view).navigate(R.id.action_welcomeFragment_to_playingFragment);
@@ -55,6 +57,8 @@ public class WelcomeFragment extends Fragment {
         mixedButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //get value from editName
+                String name = editName.getText().toString();
                 //get value from editName, assign name to Singleton, navigate to playing fragment
                 QuizTracker.getInstance().start(name, "mixed");
                 Navigation.findNavController(view).navigate(R.id.action_welcomeFragment_to_playingFragment);
