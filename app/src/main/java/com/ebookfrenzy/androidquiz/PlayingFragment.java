@@ -39,22 +39,29 @@ public class PlayingFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_playing, container, false);
+        View containerView = inflater.inflate(R.layout.fragment_playing, container, false);
         random = new Random();
-        questionNumber = view.findViewById(R.id.questionNumber);
-        questionText = view.findViewById(R.id.questionText);
-        radioAnswers = view.findViewById(R.id.radioAnswers);
-        submitButton = view.findViewById(R.id.submitButton);
-        quitButton = view.findViewById(R.id.quitButton);
+        questionNumber = containerView.findViewById(R.id.questionNumber);
+        questionText = containerView.findViewById(R.id.questionText);
+        radioAnswers = containerView.findViewById(R.id.radioAnswers);
+        submitButton = containerView.findViewById(R.id.submitButton);
+        quitButton = containerView.findViewById(R.id.quitButton);
 
+        radioAnswers.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                submitButton.setEnabled(true);
+                itemSelected = true;
+            }
+        });
 
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 //capture the value from the radioGroup and check for correct answer, if correct
                 //update correct answers, if incorrect, update incorrect answers
-
                 //move onto next question
+                submit(containerView);
             }
         });
 
@@ -62,13 +69,12 @@ public class PlayingFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 //navigate to results screen
-                Navigation.findNavController(view).navigate(R.id.action_playingFragment_to_resultFragment);
+                Navigation.findNavController(containerView).navigate(R.id.action_playingFragment_to_resultFragment);
             }
         });
 
         fireQuestion();
-        populateUserInterface();
-        return view;
+        return containerView;
     }
 
     private void addRadioButton(RadioGroup group, String text){
@@ -81,6 +87,7 @@ public class PlayingFragment extends Fragment {
 
     private void fireQuestion(){
         question = getQuestion();
+        populateUserInterface();
     }
 
     private String[] getRandomEnglishGreekLatin(){
@@ -171,5 +178,27 @@ public class PlayingFragment extends Fragment {
             }
             counter++;
         }
+    }
+
+    private void submit(View view){
+        Button checkButton = view.findViewById(radioAnswers.getCheckedRadioButtonId());
+
+        String guess = checkButton.getText().toString();
+        if(questionType == "greek"){
+            if(guess.equals(question.getGreek())){
+                QuizTracker.getInstance().setCorrectAnswers(QuizTracker.getInstance().getCorrectAnswers() + 1);
+            }else{
+                QuizTracker.getInstance().setIncorrectAnswers(QuizTracker.getInstance().getIncorrectAnswers() + 1);
+            }
+        }else{
+            if(guess.equals(question.getLatin())){ //correct answer
+                QuizTracker.getInstance().setCorrectAnswers(QuizTracker.getInstance().getCorrectAnswers() + 1);
+            }else{ //incorrect answer
+                QuizTracker.getInstance().setIncorrectAnswers(QuizTracker.getInstance().getIncorrectAnswers() + 1);
+            }
+        }
+        //increment question
+        QuizTracker.getInstance().setQuestionNum(QuizTracker.getInstance().getQuestionNum() + 1);
+        fireQuestion();
     }
 }

@@ -77,7 +77,8 @@ public class QuizTracker {
 
 
     public void start(String name, String gameType){
-        setName("");
+        setName(name);
+        setGameType(gameType);
         setCorrectAnswers(0);
         setIncorrectAnswers(0);
         setQuestionNum(1);
