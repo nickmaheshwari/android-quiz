@@ -29,11 +29,10 @@ public class PlayingFragment extends Fragment {
 
     private Question question;
     private String questionType= ""; //either latin or greek
-    private boolean itemSelected = false;
 
     private TextView questionNumber, questionText;
     private RadioGroup radioAnswers;
-    private Button submitButton, quitButton;
+    private Button submitButton, finishButton;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -45,13 +44,12 @@ public class PlayingFragment extends Fragment {
         questionText = containerView.findViewById(R.id.questionText);
         radioAnswers = containerView.findViewById(R.id.radioAnswers);
         submitButton = containerView.findViewById(R.id.submitButton);
-        quitButton = containerView.findViewById(R.id.quitButton);
+        finishButton = containerView.findViewById(R.id.finishButton);
 
         radioAnswers.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 submitButton.setEnabled(true);
-                itemSelected = true;
             }
         });
 
@@ -65,7 +63,7 @@ public class PlayingFragment extends Fragment {
             }
         });
 
-        quitButton.setOnClickListener(new View.OnClickListener() {
+        finishButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //navigate to results screen
@@ -146,7 +144,6 @@ public class PlayingFragment extends Fragment {
 
     private void populateUserInterface(){
         submitButton.setEnabled(false);
-        itemSelected = false;
 
         //populate QuestionNumber textview
         String questionNumberText = getResources().getString(R.string.questionNumberText);

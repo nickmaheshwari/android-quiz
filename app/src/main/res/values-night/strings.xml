@@ -6,7 +6,7 @@
     <string name="startQuiz">START</string>
     <string name="exitQuiz">EXIT</string>
     <string name="submit">SUBMIT</string>
-    <string name="quit">QUIT</string>
+    <string name="finish">FINISH</string>
     <string name="anotherQuiz">ANOTHER QUIZ</string>
     <string name="reset">RESET</string>
     <string name="correct">Correct: %d</string>
